@@ -2,7 +2,7 @@ export default function Header() {
     return (
          <header className="flex shadow-md py-4 px-4 sm:px-10 bg-gray-50 min-h-[70px] tracking-wide relative z-50">
       <div className="flex flex-wrap items-center justify-between gap-5 w-full">
-       <p className="text-blue">AV Engineers</p>
+       <h2 className="text-blue-600 font-bold blue-600" >AV Engineers</h2>
 
         <div id="collapseMenu"
           className="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50">
@@ -24,33 +24,33 @@ export default function Header() {
               </a>
             </li>
             <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3">
-              <a href='javascript:void(0)'
+              <a href='/'
                 className="hover:text-blue-700 text-blue-700 block font-medium text-[15px]">Home</a>
             </li>
-            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='javascript:void(0)'
-              className="hover:text-blue-700 text-slate-900 block font-medium text-[15px]">Team</a>
+            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='/ProductGallary'
+              className="hover:text-blue-700 text-slate-900 block font-medium text-[15px]">Product</a>
             </li>
-            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='javascript:void(0)'
+            {/* <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='javascript:void(0)'
               className="hover:text-blue-700 text-slate-900 block font-medium text-[15px]">Feature</a>
-            </li>
-            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='javascript:void(0)'
+            </li> */}
+            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='/Blog'
               className="hover:text-blue-700 text-slate-900 block font-medium text-[15px]">Blog</a>
             </li>
-            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='javascript:void(0)'
+            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='/About'
               className="hover:text-blue-700 text-slate-900 block font-medium text-[15px]">About</a>
             </li>
-            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='javascript:void(0)'
+            <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 px-3"><a href='/Contactus'
               className="hover:text-blue-700 text-slate-900 block font-medium text-[15px]">Contact</a>
             </li>
           </ul>
         </div>
 
         <div className="flex max-lg:ml-auto space-x-4">
-          <button
+          {/* <button
             className="px-4 py-2 text-sm rounded-full font-medium cursor-pointer tracking-wide text-slate-900 border border-gray-400 bg-transparent hover:bg-gray-50 transition-all">Login</button>
           <button
             className="px-4 py-2 text-sm rounded-full font-medium cursor-pointer tracking-wide text-white border border-blue-600 bg-blue-600 hover:bg-blue-700 transition-all">Sign
-            up</button>
+            up</button> */}
 
           <button id="toggleOpen" className="lg:hidden cursor-pointer">
             <svg className="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

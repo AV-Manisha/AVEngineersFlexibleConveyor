@@ -4,10 +4,12 @@ import { useEffect, useMemo, useState } from 'react';
 import conveyorUnits from '@/public/ProductInfo/Product.json';
 // import { useSearchParams } from 'next/navigation';
 import { usePathname, useSearchParams } from 'next/navigation';
+import Header from '@/component/atom/Header';
+import FooterDetails from '@/component/atom/Footer';
 
-interface unitType { id: number; ProductName: string; src: string; alt: string; };
+interface unitType { id: number; ProductName: string; src: string; alt: string; productInfoImg?: Array<{ src: string; alt: string }>; };
 
-export default function ProductDetails() {
+export default function ProductDetails() {  
 
 //   const pathname = usePathname();
  const pathname = usePathname()
@@ -24,6 +26,7 @@ export default function ProductDetails() {
     }, [pathname]);
 
     const filteredData = useMemo(() => {
+    console.log('Filtering data for product:', productList);
     return productList.filter(item => {
       // Example condition: filter by name including the search string
       return item.id === parseInt(pathname.split('/').pop() || '0');
@@ -34,20 +37,21 @@ export default function ProductDetails() {
 
     return (
         <>
+        <Header />
+        <br></br>
             <div className="p-4">
                 <div className="lg:max-w-6xl max-w-xl mx-auto">
                     <div className="grid items-start grid-cols-1 lg:grid-cols-2 gap-8 max-lg:gap-12 max-sm:gap-8">
                         <div className="w-full lg:sticky top-0">
                             <div className="flex flex-row gap-2">
                                 <div className="flex flex-col gap-2 w-16 max-sm:w-14 shrink-0">
-                                    <img src={filteredData[0]?.src} alt={filteredData[0]?.alt}
-                                        className="aspect-[64/85] object-cover object-top w-full cursor-pointer  border-b-2 border-black" />
-                                    <img src={filteredData[1]?.src} alt={filteredData[1]?.alt}
-                                        className="aspect-[64/85] object-cover object-top w-full cursor-pointer  border-b-2 border-transparent" />
-                                    <img src={filteredData[2]?.src} alt={filteredData[2]?.alt}
-                                        className="aspect-[64/85] object-cover object-top w-full cursor-pointer  border-b-2 border-transparent" />
-                                    <img src={filteredData[3]?.src} alt={filteredData[3]?.alt}
-                                        className="aspect-[64/85] object-cover object-top w-full cursor-pointer  border-b-2 border-transparent" />
+                                    {
+                                        filteredData[0]?.productInfoImg?.map((item, index) => (
+                                            <img key={index} src={item.src} alt={item.alt}
+                                                className="aspect-[64/85] object-cover object-top w-full cursor-pointer  border-b-2 border-transparent" />
+                                        ))
+                                    }
+                                    
                                 </div>
                                 <div className="flex-1">
                                     <img src={filteredData[0]?.src} alt={filteredData[0]?.alt}
@@ -252,6 +256,7 @@ export default function ProductDetails() {
                     </div>
                 </div>
             </div>
+            <FooterDetails  />
         </>
     )
 }

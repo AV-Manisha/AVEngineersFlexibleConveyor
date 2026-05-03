@@ -3,7 +3,29 @@
             "id": 1,
             "ProductName": "Conveyor Unit 1",
             "src": "/img/Product/img-1.jpg",
-            "alt": "conveyor unit 1"
+            "alt": "conveyor unit 1",
+            "productInfoImg": [
+                {
+                    "id": 1,
+                    "src": "/img/Product/img-1.jpg",
+                    "alt": "conveyor unit 1 info 1"
+                },
+                {
+                    "id": 2,
+                    "src": "/img/Product/img-2.jpg",
+                    "alt": "conveyor unit 1 info 2"
+                },
+                {
+                    "id": 3,
+                    "src": "/img/Product/img-3.jpg",
+                    "alt": "conveyor unit 1 info 3"
+                },
+                {
+                    "id": 4,
+                    "src": "/img/Product/img-4.webp",
+                    "alt": "conveyor unit 1 info 4"
+                }
+            ]
         },
         {
             "id": 2,
